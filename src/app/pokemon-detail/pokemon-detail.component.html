@@ -1,0 +1,29 @@
+<div class="p-3">
+    <button class="btn btn-primary" [routerLink]="['/pokemon-list']" >Back</button>
+</div>
+<div class="card" style="width: 50%;margin: 2em auto;">
+    <img class="card-img-top pokemon-image" src="{{pokemon_details?.sprites?.front_default}}" alt="pokemon-image">
+    <div class="card-body pokemon_details">
+        <div>
+            <h2>Name: {{pokemon_details?.name}}</h2>
+            <h2>Weight: {{pokemon_details?.weight}}</h2>
+            <h2>Height: {{pokemon_details?.height}}</h2>
+            <h2>Type: 
+                <span *ngFor="let type of pokemon_details?.types">
+                    <h5>{{type.type.name}}</h5>
+                </span>
+            </h2>
+            <h2>Base Experience: {{pokemon_details?.base_experience}}</h2>
+        </div>
+        <div>
+            <h2>Stats</h2>
+            <span *ngFor="let stat of pokemon_details?.stats">
+                <h5>{{stat.stat.name}}: {{stat.base_stat}}</h5>
+            </span>
+            <h2>Abilities</h2>
+            <span *ngFor="let ability of pokemon_details?.abilities">
+                <h5>{{ability.ability.name}}</h5>
+            </span>
+        </div>
+    </div>
+</div>

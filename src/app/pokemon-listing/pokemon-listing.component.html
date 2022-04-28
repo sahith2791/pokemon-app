@@ -1,0 +1,24 @@
+<section class="pokemon-lists">
+    <h1><span class="badge-primary">Pokemon Lists</span></h1>
+    <!-- <div class="form-group form-inline">
+        search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="service.searchTerm"/>
+        <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span>
+    </div> -->
+    <table class="table table-sm table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of (pokemon_data | paginationPipe:page:itemsPerPage); let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.name | titlecase}}</td>
+            <td (click)="show_detail(item.url)" style="cursor: pointer;">Show Detail</td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination [totalItems]="total" (pageChanged)="pageChanged($event)" [itemsPerPage] = "10"  [maxSize]="10">  </pagination>
+</section>

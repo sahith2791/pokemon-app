@@ -1,0 +1,8 @@
+.card-body.pokemon_details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.pokemon-image{
+    width: 35%;
+    margin: 0 auto;
+}
