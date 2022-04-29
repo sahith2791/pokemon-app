@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { PaginationPipePipe } from './pagination.pipe';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,8 @@ import { PaginationPipePipe } from './pagination.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(),
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent],
