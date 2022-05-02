@@ -10,12 +10,12 @@
             <h2>Height: {{pokemon_details?.height}}</h2>
             <h2>Type: 
                 <span *ngFor="let type of pokemon_details?.types">
-                    <h2>{{type.type.name}}</h2>
+                    <span>{{type.type.name}}</span>
                 </span>
             </h2>
             <h2>Base Experience: {{pokemon_details?.base_experience}}</h2>
         </div>
-        <div>
+        <div class="right_align">
             <h2>Stats</h2>
             <span *ngFor="let stat of pokemon_details?.stats">
                 <h5>{{stat.stat.name}}: {{stat.base_stat}}</h5>

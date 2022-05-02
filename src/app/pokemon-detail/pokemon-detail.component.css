@@ -1,10 +1,12 @@
 .card-body.pokemon_details {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: 1em;
-    background: aliceblue;
 }
 .pokemon-image{
     width: 35%;
     margin: 0 auto;
+}
+.right_align{
+    text-align: right;
 }
