@@ -9,8 +9,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of (pokemon_data | paginationPipe:page:itemsPerPage); let i = index">
-            <th scope="row">{{i+1}}</th>
+          <tr *ngFor="let item of (pokemon_data | paginationPipe:page:itemsPerPage); index as i">
+            <th scope="row" *ngIf="page==1">{{i+1}}</th>
+            <th scope="row" *ngIf="page>1">{{((page-1)*10)+(i+1)}}</th>
             <td>{{item.name | titlecase}}</td>
             <td class="button" (click)="show_detail(item.url)" style="cursor: pointer;">Show Detail</td>
           </tr>
